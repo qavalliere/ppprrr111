@@ -268,18 +268,38 @@ user.email=qavalliere04@gmail.com</code></pre>
         </div>
 
         <h4>6. Підключення JavaScript, внесення змін та відправка до репозиторію</h4>
-        <p>Було виконано модифікацію вихідних файлів проєкту:</p>
+        <p>Було виконано підключення JavaScript та перевірку стилів:</p>
         <ul>
-            <li><strong>index.html:</strong> підключено зовнішній файл скрипта у секції <code>&lt;head&gt;</code> через тег <code>&lt;script src="script.js" defer&gt;&lt;/script&gt;</code>, створено інтерактивну картку з кнопкою <code>#interactiveBtn</code> та параграфом для виводу повідомлення.</li>
-            <li><strong>script.js:</strong> додано вивід перевірочних повідомлень у консоль <code>console.log()</code> та обробник події кліку на кнопку з підрахунком кількості натискань.</li>
-            <li><strong>style.css:</strong> додано сучасну стилізацію (приємний градієнтний фон, центрування блоку, тіні, адаптивний дизайн).</li>
+            <li><strong>index.html:</strong> підключено зовнішній файл скрипта тегом <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code> у тілі документа <code>&lt;body&gt;</code>:
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Hello World!&lt;/title&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+&lt;h1&gt;Hello world!&lt;/h1&gt;
+&lt;p&gt;This is the first file in my new Git Repo.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </li>
+            <li><strong>script.js:</strong> містить вивід тестового повідомлення у консоль браузера:
+                <pre><code>console.log("Hello World!");</code></pre>
+            </li>
+            <li><strong>style.css:</strong> задає фоновий колір сторінки:
+                <pre><code>*{
+background: green;
+}</code></pre>
+            </li>
         </ul>
         <p>Фіксація та публікація змін у віддаленому репозиторії <strong>ppprrr111</strong>:</p>
-        <pre><code>git add .
-git commit -m "Підключено script.js до index.html та оновлено стилі"
-git remote set-url origin git@github.com:qavalliere/ppprrr111.git
-git push -u origin main</code></pre>
-        <p>У результаті коміт <code>c2cb7ee</code> успішно опубліковано у гілці <code>main</code> репозиторію <code>qavalliere/ppprrr111</code>.</p>
+        <pre><code>git add index.html script.js style.css
+git commit -m "Замінено файли на власні версії index.html, script.js, style.css"
+git push origin main</code></pre>
+        <p>У результаті всі оновлені файли успішно опубліковано у гілці <code>main</code> репозиторію <code>qavalliere/ppprrr111</code>.</p>
         <div class="screenshot-box">
             <div class="screenshot-title">📷 Скріншот 6: Виконання commit та push змін</div>
             <div class="screenshot-desc">(Термінал з результатом виконання команд git commit та git push origin main)</div>
