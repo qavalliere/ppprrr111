@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіт з практичної роботи - Git та GitHub</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 15mm 20mm 20mm;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14pt;
+            line-height: 1.5;
+            color: #000;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 18pt;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        .header h2 {
+            font-size: 15pt;
+            font-weight: normal;
+            margin-top: 0;
+            color: #333;
+        }
+        .info-block {
+            margin-bottom: 30px;
+            font-size: 13pt;
+            border: 1px solid #ccc;
+            padding: 15px 20px;
+            background: #fafafa;
+        }
+        .info-block table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info-block td {
+            padding: 4px 8px;
+            vertical-align: top;
+        }
+        .info-block td.label {
+            font-weight: bold;
+            width: 35%;
+        }
+        h3 {
+            font-size: 15pt;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #1a237e;
+            border-left: 4px solid #1a237e;
+            padding-left: 10px;
+        }
+        p, li {
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+        code {
+            font-family: "Consolas", "Courier New", monospace;
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12pt;
+        }
+        pre {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 12px 15px;
+            font-family: "Consolas", "Courier New", monospace;
+            font-size: 11pt;
+            line-height: 1.4;
+            overflow-x: auto;
+            margin: 12px 0;
+            color: #24292e;
+        }
+        .screenshot-box {
+            border: 2px dashed #90caf9;
+            background-color: #f3f8fe;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .screenshot-title {
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 6px;
+            font-size: 12pt;
+        }
+        .screenshot-desc {
+            font-size: 11pt;
+            color: #555;
+            font-style: italic;
+        }
+        .btn-print {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1976d2;
+            color: white;
+            padding: 12px 24px;
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: 0.2s;
+        }
+        .btn-print:hover {
+            background: #115293;
+            transform: scale(1.03);
+        }
+        .link-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 12px 18px;
+            margin: 20px 0;
+            font-size: 13pt;
+        }
+        .link-box a {
+            color: #2e7d32;
+            word-break: break-all;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+            font-size: 11pt;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn-print no-print" onclick="window.print()">🖨️ Друк / Зберегти як PDF</button>
+
+    <div class="container">
+        <div class="header">
+            <h1>Звіт з практичної роботи</h1>
+            <h2>Тема: Робота з розподіленою системою контролю версій Git та сервісом GitHub</h2>
+        </div>
+
+        <div class="info-block">
+            <table>
+                <tr>
+                    <td class="label">Студент:</td>
+                    <td>qavalliere</td>
+                </tr>
+                <tr>
+                    <td class="label">Email:</td>
+                    <td>qavalliere04@gmail.com</td>
+                </tr>
+                <tr>
+                    <td class="label">Публічний репозиторій:</td>
+                    <td><a href="https://github.com/qavalliere/ppprrr111" target="_blank">https://github.com/qavalliere/ppprrr111</a></td>
+                </tr>
+                <tr>
+                    <td class="label">Хост GitHub Pages:</td>
+                    <td><a href="https://qavalliere.github.io/ppprrr111/" target="_blank">https://qavalliere.github.io/ppprrr111/</a></td>
+                </tr>
+                <tr>
+                    <td class="label">Створений Fork:</td>
+                    <td><a href="https://github.com/qavalliere/petclinic-spinnaker-jenkins" target="_blank">https://github.com/qavalliere/petclinic-spinnaker-jenkins</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <p><strong>Мета роботи:</strong> Отримати практичні навички роботи з Git та веб-сервісом GitHub; навчитися встановлювати та налаштовувати локальний клієнт Git, клонувати віддалені репозиторії, підключати зовнішні файли (JavaScript), фіксувати зміни комітами, публікувати їх на GitHub, публікувати статичні сайти за допомогою GitHub Pages та створювати форки існуючих проєктів.</p>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+
+        <h3>Хід виконання роботи</h3>
+
+        <h4>1. Створення облікового запису на GitHub</h4>
+        <p>Для виконання роботи використано персональний акаунт на платформі GitHub з логіном <strong>qavalliere</strong>.</p>
+        <div class="screenshot-box">
+            <div class="screenshot-title">📷 Скріншот 1: Профіль користувача на GitHub</div>
+            <div class="screenshot-desc">(Сторінка профілю https://github.com/qavalliere)</div>
+        </div>
+
+        <h4>2. Створення публічно доступного репозиторію</h4>
+        <p>На GitHub було створено новий відкритий репозиторій з назвою <strong>ppprrr111</strong>. Репозиторій налаштовано як публічний (Public), що забезпечує відкритий доступ до вихідного коду проєкту.</p>
+        <div class="screenshot-box">
+            <div class="screenshot-title">📷 Скріншот 2: Створений репозиторій ppprrr111 на GitHub</div>
+            <div class="screenshot-desc">(Головна сторінка репозиторію з видимим бейджем Public)</div>
+        </div>
+
+        <h4>3. Встановлення локально git клієнта</h4>
+        <p>На локальному комп'ютері перевірено наявність та версію встановленого клієнта Git через термінал командного рядка:</p>
+        <pre><code>PS C:\Users\qaval> git --version
+git version 2.56.0.windows.2</code></pre>
+        <p>Клієнт Git успішно встановлений та готовий до роботи.</p>
+        <div class="screenshot-box">
+            <div class="screenshot-title">📷 Скріншот 3: Перевірка версії Git у терміналі</div>
+            <div class="screenshot-desc">(Вікно консолі з виконаною командою git --version)</div>
+        </div>
+
+        <h4>4. Налаштування користувача Git</h4>
+        <p>Встановлено глобальні параметри імені та електронної пошти для коректної атрибуції авторства комітів:</p>
+        <pre><code>git config --global user.name "qavalliere"
+git config --global user.email "qavalliere04@gmail.com"</code></pre>
+        <p>Перевірка параметрів виконана командою <code>git config --list</code>:</p>
+        <pre><code>user.name=qavalliere
+user.email=qavalliere04@gmail.com</code></pre>
+        <div class="screenshot-box">
+            <div class="screenshot-title">📷 Скріншот 4: Вивід налаштувань користувача Git</div>
+            <div class="screenshot-desc">(Вікно консолі з виводом команди git config --list)</div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h4>5. Локальне клонування репозиторію sviatoslavem/mnau</h4>
+        <p>Створено локальну копію вихідного навчального репозиторію за допомогою команди <code>git clone</code>:</p>
+        <pre><code>git clone https://github.com/sviatoslavem/mnau.git</code></pre>
+        <p>У результаті було завантажено вихідні файли: <code>index.html</code>, <code>script.js</code>, <code>style.css</code> та історію комітів у директорії <code>.git</code>.</p>
+        <div class="screenshot-box">
+            <div class="screenshot-title">📷 Скріншот 5: Клонування репозиторію sviatoslavem/mnau</div>
+            <div class="screenshot-desc">(Термінал з процесом виконання git clone та завантаженими файлами)</div>
+        </div>
+
+        <h4>6. Підключення JavaScript, внесення змін та відправка до репозиторію</h4>
+        <p>Було виконано модифікацію вихідних файлів проєкту:</p>
+        <ul>
+            <li><strong>index.html:</strong> підключено зовнішній файл скрипта у секції <code>&lt;head&gt;</code> через тег <code>&lt;script src="script.js" defer&gt;&lt;/script&gt;</code>, створено інтерактивну картку з кнопкою <code>#interactiveBtn</code> та параграфом для виводу повідомлення.</li>
+            <li><strong>script.js:</strong> додано вивід перевірочних повідомлень у консоль <code>console.log()</code> та обробник події кліку на кнопку з підрахунком кількості натискань.</li>
+            <li><strong>style.css:</strong> додано сучасну стилізацію (приємний градієнтний фон, центрування блоку, тіні, адаптивний дизайн).</li>
+        </ul>
+        <p>Фіксація та публікація змін у віддаленому репозиторії <strong>ppprrr111</strong>:</p>
+        <pre><code>git add .
+git commit -m "Підключено script.js до index.html та оновлено стилі"
+git remote set-url origin git@github.com:qavalliere/ppprrr111.git
+git push -u origin main</code></pre>
+        <p>У результаті коміт <code>c2cb7ee</code> успішно опубліковано у гілці <code>main</code> репозиторію <code>qavalliere/ppprrr111</code>.</p>
+        <div class="screenshot-box">
+            <div class="screenshot-title">📷 Скріншот 6: Виконання commit та push змін</div>
+            <div class="screenshot-desc">(Термінал з результатом виконання команд git commit та git push origin main)</div>
+        </div>
+
+        <h4>7. Налаштування хостингу GitHub Pages</h4>
+        <p>У налаштуваннях репозиторію <strong>Settings ➔ Pages</strong> встановлено джерело публікації сайту:</p>
+        <ul>
+            <li><strong>Source:</strong> Deploy from a branch</li>
+            <li><strong>Branch:</strong> <code>main</code>, папка <code>/ (root)</code></li>
+        </ul>
+        <p>Після збереження налаштувань веб-сторінка автоматично зібрана та розгорнута хостингом GitHub Pages.</p>
+        <div class="link-box">
+            <strong>🔗 Посилання на робочий хост GitHub Pages:</strong><br>
+            <a href="https://qavalliere.github.io/ppprrr111/" target="_blank">https://qavalliere.github.io/ppprrr111/</a>
+        </div>
+        <div class="screenshot-box">
+            <div class="screenshot-title">📷 Скріншот 7: Розгорнутий сайт на GitHub Pages</div>
+            <div class="screenshot-desc">(Сторінка https://qavalliere.github.io/ppprrr111/ у браузері з відкритою консоллю F12, де відображається вивід JavaScript)</div>
+        </div>
+
+        <h4>8. Створення форку (Fork) репозиторію</h4>
+        <p>Відкрито сторінку репозиторію <a href="https://github.com/ibuchh/petclinic-spinnaker-jenkins" target="_blank">ibuchh/petclinic-spinnaker-jenkins</a> та створено форк у власний профіль за допомогою кнопки <strong>Fork</strong>.</p>
+        <div class="link-box">
+            <strong>🔗 Посилання на форк репозиторію:</strong><br>
+            <a href="https://github.com/qavalliere/petclinic-spinnaker-jenkins" target="_blank">https://github.com/qavalliere/petclinic-spinnaker-jenkins</a>
+        </div>
+        <div class="screenshot-box">
+            <div class="screenshot-title">📷 Скріншот 8: Сторінка створеного форку на GitHub</div>
+            <div class="screenshot-desc">(Сторінка qavalliere/petclinic-spinnaker-jenkins із зазначенням forked from ibuchh/petclinic-spinnaker-jenkins)</div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+        <h3>Висновки</h3>
+        <p>Під час виконання практичної роботи було детально опрацьовано та закріплено фундаментальні практичні навички роботи з розподіленою системою контролю версій Git та платформою GitHub. Успішно здійснено:</p>
+        <ol>
+            <li>Локальне налаштування Git та конфігурацію користувача.</li>
+            <li>Клонування віддаленого сховища на локальний комп'ютер.</li>
+            <li>Внесення змін у код HTML, стилі CSS та інтерактивну логіку JavaScript із перевіркою підключення скрипта.</li>
+            <li>Фіксацію змін за допомогою комітів та синхронізацію з віддаленим сервером через SSH.</li>
+            <li>Публікацію та хостинг статичного сайту на GitHub Pages.</li>
+            <li>Створення форку стороннього відкритого проєкту на GitHub.</li>
+        </ol>
+
+        <footer>
+            Звіт сформовано для здачі практичної роботи. Дата: 13 жовтня 2026 р.
+        </footer>
+    </div>
+</body>
+</html>
